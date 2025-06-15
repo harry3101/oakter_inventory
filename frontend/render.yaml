@@ -7,9 +7,9 @@ services:
       - key: VITE_API_URL
         value: https://oakter-inventory.onrender.com
     headers:
-      - path: /*
-        name: Cache-Control
-        value: no-cache
+      - path: /assets/*
+        name: Content-Type
+        value: application/javascript
       - path: /*.js
         name: Content-Type
         value: application/javascript
@@ -22,4 +22,16 @@ services:
       - path: /*.tsx
         name: Content-Type
         value: application/javascript
+      - path: /index.html
+        name: Content-Type
+        value: text/html
+      - path: /*.css
+        name: Content-Type
+        value: text/css
+      - path: /*.json
+        name: Content-Type
+        value: application/json
+      - path: /*
+        name: Cache-Control
+        value: no-cache
     autoDeploy: true 
