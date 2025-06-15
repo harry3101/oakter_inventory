@@ -5,9 +5,21 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://oakter-inventory-backend.onrender.com
+        value: https://oakter-inventory.onrender.com
     headers:
       - path: /*
         name: Cache-Control
         value: no-cache
+      - path: /*.js
+        name: Content-Type
+        value: application/javascript
+      - path: /*.mjs
+        name: Content-Type
+        value: application/javascript
+      - path: /*.ts
+        name: Content-Type
+        value: application/javascript
+      - path: /*.tsx
+        name: Content-Type
+        value: application/javascript
     autoDeploy: true 
