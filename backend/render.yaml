@@ -2,7 +2,9 @@ services:
   - type: web
     name: oakter-inventory-backend
     env: node
-    buildCommand: cd backend && npm install --production
+    buildCommand: |
+      cd backend
+      npm ci
     startCommand: cd backend && node server.js
     envVars:
       - key: NODE_ENV
